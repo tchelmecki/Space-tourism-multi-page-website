@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+.destination-content{
+    height: 100svh;
+    background-image: url(../assets//destination/background-destination-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Barlow Condensed', sans-serif;
+
+    
+}
+.space-object, .choose-object{
+    width: 678px;
+    height: 600px;
+}
+.space-object {
+    /* background-color: red; */
+    position: relative;
+}
+.space-object p{
+    font-size: 28px;
+    margin-bottom: 50px;
+    letter-spacing: 4.75px;
+    position: absolute;
+    top: -80px;
+
+}
+.space-object p span{
+  color: #8e8e8e;
+  font-weight: 700;
+}
+.space-object img{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.content{
+    display: flex;
+    justify-content: center;
+}
+.choose-object{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: rebeccapurple; */
+}
+.planets-name span{
+    margin-right: 40px;
+    font-size: 16px;
+    color: var(--brightpurple);
+}
+.planet{
+    font-size: 100px;
+    font-family: 'Bellefair', serif;
+
+}
