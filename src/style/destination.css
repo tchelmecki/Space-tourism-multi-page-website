@@ -10,7 +10,8 @@
 }
 .space-object, .choose-object{
     width: 678px;
-    height: 600px;
+    height: 500px;
+    /* background-color: red; */
 }
 .space-object {
     /* background-color: red; */
@@ -18,10 +19,9 @@
 }
 .space-object p{
     font-size: 28px;
-    margin-bottom: 50px;
     letter-spacing: 4.75px;
     position: absolute;
-    top: -80px;
+    top: -120px;
 
 }
 .space-object p span{
@@ -30,7 +30,7 @@
 }
 .space-object img{
     margin-left: 50px;
-    margin-top: 50px;
+
 }
 .content{
     display: flex;
@@ -39,16 +39,47 @@
 .choose-object{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* background-color: rebeccapurple; */
+    background-color: rebeccapurple;
 }
-.planets-name span{
-    margin-right: 40px;
+.planets-name{
+    display: flex;
+    margin-bottom: 40px;
+}
+.planets-name .planet{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: 60px;
     font-size: 16px;
     color: var(--brightpurple);
-}
-.planet{
-    font-size: 100px;
-    font-family: 'Bellefair', serif;
+    position: relative;
+    padding-bottom: 10px;
+    cursor: pointer;
 
 }
+.planets-name .planet::after{
+    content: "";
+    background: #a2a2a2;
+    height: 3px;
+    width: 0%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    transition: .2s ease-in-out all;
+
+}
+.planet:hover::after{
+    width: 100%;
+}
+.planetMain{
+    font-size: 100px;
+    font-family: 'Bellefair', serif;
+    margin-bottom: 40px;
+}
+
+.planets-name .planet.active::after {
+    width: 100%;
+    background: #fff;
+
+  }

@@ -1,40 +1,97 @@
-import React from 'react';
-import { motion } from 'framer-motion';  // Import motion from framer-motion
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import '../style/destination.css';
 import Nav from '../components/Home/Nav';
-import planet from '../assets/destination/image-moon.png';
+import data from '../assets/data.json';
+
 const Destination = () => {
-    const containerVariants = {
-        hidden: { opacity: 0, y: 0 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-      };
+  const containerVariants = {
+    hidden: { opacity: 0, y: 0 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3 } },
+  };
+
+  const [selectedPlanet, setSelectedPlanet] = useState( 
+       data.destinations.length > 0 ? data.destinations[0].name : null
+    );
+
+  const handlePlanetClick = (planetName) => {
+    setSelectedPlanet(planetName);
+  };
 
   return (
     <motion.div 
-    className='destination-content'
-    variants={containerVariants}
-    initial="hidden"
-    animate="visible"
+      className='destination-content'
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
     >
-    <Nav/>
-    <div className="content">
+      <Nav />
+      <div className="content">
         <div className="space-object">
-            <p><span>01</span> PICK YOUR DESTINATION</p>
-            <img src={planet} alt="" />
+          <p><span>01</span> PICK YOUR DESTINATION</p>
+          {selectedPlanet && (
+            <motion.div
+            key={selectedPlanet}  // Dodaj klucz do zapewnienia unikalności
+
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <img
+                src={
+                  data.destinations.find(
+                    (destination) => destination.name === selectedPlanet
+                  )?.images?.png || ''
+                }
+                alt="Selected Planet"
+              />
+            </motion.div>
+          )}
         </div>
         <div className="choose-object">
-            <p className='planets-name'><span>MOON</span><span>MARS</span><span>EUROPA</span><span>TITAN</span></p>
-            <p className='planet'>MOON</p>
-            <p></p>
-            <div className="distance">
-                <span>average</span>
-                <span>3days</span>
-            </div>
+          <div className='planets-name'>
+            {data.destinations.map((destination, i) => (
+              <motion.div
+              className={`planet ${destination.name === selectedPlanet ? 'active' : ''}`}
+              key={i}
+                variants={imageVariants}
+                initial="hidden"
+                animate="visible"
+                onClick={() => handlePlanetClick(destination.name)}
+              >
+                {destination.name}
+              </motion.div>
+            ))}
+          </div>
+          
+          {selectedPlanet && (
+            <motion.div
+              className='selected-planet-info'
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {data.destinations.map((destination, i) =>
+                destination.name === selectedPlanet ? (
+                  <div className='' key={i}>
+                    <h1>{destination.name}</h1>
+                    <p>{destination.description}</p>
+                    <p>Distance: {destination.distance}</p>
+                    <p>Travel time: {destination.travel}</p>
+                  </div>
+                ) : null
+              )}
+            </motion.div>
+          )}
         </div>
-    </div>
-    
+      </div>
     </motion.div>
-  )
+  );
 }
 
 export default Destination;
