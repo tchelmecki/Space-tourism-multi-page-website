@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';  // Import motion from framer-motion
-import Nav from '../components/Home/Nav';
+import Nav from '../components/ForAll/Nav';
 import '../style/home.css';
 import ContentHome from '../components/Home/ContentHome';
 

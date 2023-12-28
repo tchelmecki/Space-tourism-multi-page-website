@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@100&family=Bellefair&display=swap');
 :root{
     --white: #fff;
     --brightpurple: #D0d6f9;
     --brightblack: #0b0D17;
 }
 html{
+    font-family: 'Barlow', sans-serif;
     font-family: 'Barlow Condensed', sans-serif;
     font-family: 'Bellefair', serif;
     color: var(--white);
@@ -74,7 +75,7 @@ nav{
     left: 0;
     transform: translateX(-50%); /* Przesunięcie o 50% szerokości, aby być wyśrodkowanym */
 }
-.menu p{
+.menu .under{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,13 +84,13 @@ nav{
     transition: .1s ease-in-out all;
     position: relative;
 }
-.menu p:hover{
+.menu .under:hover{
     cursor: pointer;
 }
-.menu p span{
+.menu .under span{
     margin-right: 5px;
 }
-.menu p::after{
+.menu .under::after{
     content: "";
     width: 100%;
     height: 3px;
@@ -100,7 +101,7 @@ nav{
     animation: navIn .3s;
 }
 
-.menu p:hover::after{
+.menu .under:hover::after{
     display: block;
     
 }
@@ -125,7 +126,7 @@ a{
     justify-content: space-around;
     align-items: center;
     height: 85svh;
-    padding-top: 150px;
+    padding-top: 120px;
 }
 section{
     width: 600px;
@@ -151,7 +152,7 @@ section p:nth-child(3){
     text-align: justify;
 }
 aside{
-    width: 600px;
+    width: 640px;
     height: 400px;
     display: flex;
     justify-content: center;

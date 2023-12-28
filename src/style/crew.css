@@ -1,0 +1,108 @@
+.container-crew{
+    height: 100svh;
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Barlow Condensed', sans-serif;
+    
+}
+.content-crew{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.crew-info{
+    width: 770px;
+    height: 80svh;
+    /* background-color: red; */
+}
+.choose-crew{
+    width: 770px;
+    height: 85svh;
+    /* background-color: blue; */
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end; */
+}
+
+.choose-crew img{
+    position: absolute;
+    left: 10%;
+    bottom: 0;  
+}
+
+.crew-info{
+    position: relative;
+    /* background-color: red; */
+}
+.title-page .meet-your-creew{
+    font-size: 28px;
+    letter-spacing: 4.75px;
+
+
+}
+.title-page  .meet-your-creew span{
+  color: #8e8e8e;
+  font-weight: bold;
+}
+.dots-choose-crew{
+    width: 20px;
+    height: 20px;
+    background: #a2a2a2;
+    border-radius: 100%;
+    transition: .2s ease-in-out all;
+}
+.dots-choose-crew:not(:first-child){
+    margin-left: 15px;
+
+}
+.dots-choose-crew:hover{
+    cursor: pointer;
+    background-color: #8e8e8e;
+}
+.crew-name{
+    display: flex;
+    width: 444px;
+    margin-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+}
+.crew-name .crew{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: 60px; 
+    font-size: 16px;
+    color: var(--brightpurple);
+    position: relative;
+    padding-bottom: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+
+}
+/* .crew-name .crew::after{
+    content: "";
+    background: #a2a2a2;
+    height: 3px;
+    width: 0%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    transition: .2s ease-in-out all;
+
+} */
+/* .crew-name:hover::after{
+    width: 100%;
+} */
+.planetMain{
+    font-size: 100px;
+    font-family: 'Bellefair', serif;
+    margin-bottom: 40px;
+}
+
+.crew-name .dots-choose-crew.active {
+    background: #fff;
+}

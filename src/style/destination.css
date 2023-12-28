@@ -9,7 +9,7 @@
     
 }
 .space-object, .choose-object{
-    width: 678px;
+    width: 770px;
     height: 500px;
     /* background-color: red; */
 }
@@ -39,22 +39,26 @@
 .choose-object{
     display: flex;
     flex-direction: column;
-    background-color: rebeccapurple;
+    align-items: center;
+    padding-right: 60px;
 }
 .planets-name{
     display: flex;
+    width: 444px;
     margin-bottom: 40px;
 }
 .planets-name .planet{
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-right: 60px;
+    margin-right: 60px; 
     font-size: 16px;
     color: var(--brightpurple);
     position: relative;
     padding-bottom: 10px;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
 
 }
 .planets-name .planet::after{
@@ -81,5 +85,45 @@
 .planets-name .planet.active::after {
     width: 100%;
     background: #fff;
+}
 
-  }
+.planets-chosen p:first-child{
+    font-size: 100px;
+    font-family: 'Bellefair', serif;
+    text-transform: uppercase;
+}
+
+.planets-chosen p:nth-child(2){
+    width: 444px;
+    text-align: justify;
+    font-size: 18px;
+    position: relative;
+    color: var(--brightpurple);
+    font-family: 'Barlow', sans-serif;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.planets-chosen p:nth-child(2)::before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #383B4B;
+    position: absolute;
+    bottom: 0;
+}
+
+.distance-travel{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    font-size: 16px;
+    text-transform: uppercase;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.distance-travel span:nth-child(3),span:nth-child(4){
+    font-size: 28px;
+    font-family: 'Bellefair', serif;
+    padding-top: 12px;
+}

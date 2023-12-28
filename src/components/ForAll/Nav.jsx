@@ -15,10 +15,10 @@ const Nav = () => {
       <div class="line"></div>
     </div>
     <div class="menu">
-    <p><Link to="/"><span>00</span> HOME</Link></p>
-    <p><Link to="/destination"><span>01</span> DESTINATION</Link></p>
-    <p><span>02</span> CREW</p>
-    <p><span>03</span> TECHNOLOGY</p>
+    <Link className='under' to="/"><p><span>00</span> HOME</p></Link>
+    <Link className='under' to="/destination"><p><span>01</span> DESTINATION</p></Link>
+    <Link className='under' to="/crew"><p><span>02</span> CREW</p></Link>
+    <Link className='under' to="/technology"><p><span>03</span> TECHNOLOGY</p></Link>
     </div>
   </nav>
   </>
