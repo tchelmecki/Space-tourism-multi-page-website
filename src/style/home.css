@@ -31,6 +31,8 @@ nav{
     font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 3px;
 }
+
+
 .logo{
     width: 10svw;
     display: flex;
@@ -75,6 +77,8 @@ nav{
     left: 0;
     transform: translateX(-50%); /* Przesunięcie o 50% szerokości, aby być wyśrodkowanym */
 }
+
+
 .menu .under{
     display: flex;
     justify-content: center;
@@ -94,7 +98,7 @@ nav{
     content: "";
     width: 100%;
     height: 3px;
-    background-color: white;
+    background-color: #979797;
     position: absolute;
     bottom: 0;
     display: none;
@@ -103,8 +107,25 @@ nav{
 
 .menu .under:hover::after{
     display: block;
-    
 }
+
+/* .menu .under::before{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    animation: navIn .3s;
+} */
+
+
+.menu .under.active::after {
+    display: block;
+    background-color: #fff;
+}
+
 a{
     text-decoration: none;
     color: var(--white);

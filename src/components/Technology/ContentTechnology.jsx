@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import '../../style/technology.css';
 import '../../style/crew.css';
-import {motion} from 'framer-motion';
 import data from '../../assets/data.json';
+import {motion} from 'framer-motion';
 
-
-const ContentCrew = () => {
+const ContentTechnology = () => {
     const imageVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { duration: 0.3 } },
       };
     
       const [selectedPlanet, setSelectedPlanet] = useState( 
-           data.crew.length > 0 ? data.crew[0].name : null
+           data.technology.length > 0 ? data.technology[0].name : null
         );
     
       const handlePlanetClick = (planetName) => {
@@ -24,38 +24,37 @@ const ContentCrew = () => {
     <div  className="title-page">
         <p className='meet-your-creew'><span>02</span> MEET YOUR CREW</p>
     </div>
-    <div className="crew-info">
+    <div className="tech-info">
 
       
       
       {selectedPlanet && (
         <motion.div
-          className='selected-pla'
+          className='tech'
           variants={imageVariants}
           initial="hidden"
           animate="visible"
         >
-          {data.crew.map((crew, i) =>
-            crew.name === selectedPlanet ? (
-              <div className='person-info' key={i}>
-                <p>{crew.role}</p>
-                <p>{crew.name}</p>
-                <p>{crew.bio}</p>
+          {data.technology.map((technology, i) =>
+            technology.name === selectedPlanet ? (
+              <div className='tech-info' key={i}>
+                <p>The terminology</p>
+                <p>{technology.description}</p>
               </div>
             ) : null
           )}
         </motion.div>
       )}
 
-    <div className='crew-name'>
-        {data.crew.map((crew, i) => (
+    <div className='container-circle'>
+        {data.technology.map((technology, i) => (
           <motion.div
-          className={`dots-choose-crew ${crew.name === selectedPlanet ? 'active' : ''}`}
+          className={`dots-choose-crew ${technology.name === selectedPlanet ? 'active' : ''}`}
           key={i}
             variants={imageVariants}
             initial="hidden"
             animate="visible"
-            onClick={() => handlePlanetClick(crew.name)}
+            onClick={() => handlePlanetClick(technology.name)}
           >
             <span className='dots-choose-crew'></span>
           </motion.div>
@@ -77,9 +76,9 @@ const ContentCrew = () => {
         >
           <img
             src={
-              data.crew.find(
-                (crew) => crew.name === selectedPlanet
-              )?.images?.png || ''
+              data.technology.find(
+                (technology) => technology.name === selectedPlanet
+              )?.images?.portrait || ''
             }
             alt="Selected Crew"
           />
@@ -90,7 +89,7 @@ const ContentCrew = () => {
 
 
   </div>
-  )
+    )
 }
 
-export default ContentCrew
+export default ContentTechnology

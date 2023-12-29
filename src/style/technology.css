@@ -1,0 +1,23 @@
+.container-technology{
+    background-image: url(/src/assets/technology/background-technology-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100svh;
+}
+.tech-info{
+    width: 770px;
+    /* height: 72svh; */
+    /* background-color: red; */
+    position: relative;
+    background-color: red;
+}
+.container-circle{
+    background-color: blue;
+    /* width: 20%; */
+}
+.tech{
+    width: 80%;
+    background-color: brown;
+}
+
+   

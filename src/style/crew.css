@@ -9,12 +9,15 @@
 .content-crew{
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     flex-wrap: wrap;
 }
 .crew-info{
     width: 770px;
-    height: 80svh;
+    height: 72svh;
     /* background-color: red; */
+    position: relative;
+
 }
 .choose-crew{
     width: 770px;
@@ -32,15 +35,9 @@
     bottom: 0;  
 }
 
-.crew-info{
-    position: relative;
-    /* background-color: red; */
-}
 .title-page .meet-your-creew{
     font-size: 28px;
     letter-spacing: 4.75px;
-
-
 }
 .title-page  .meet-your-creew span{
   color: #8e8e8e;
@@ -49,7 +46,7 @@
 .dots-choose-crew{
     width: 20px;
     height: 20px;
-    background: #a2a2a2;
+    background: #979797;
     border-radius: 100%;
     transition: .2s ease-in-out all;
 }
@@ -59,12 +56,12 @@
 }
 .dots-choose-crew:hover{
     cursor: pointer;
-    background-color: #8e8e8e;
+    background-color: #777777;
 }
 .crew-name{
     display: flex;
     width: 444px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     position: absolute;
     bottom: 0;
 }
@@ -105,4 +102,27 @@
 
 .crew-name .dots-choose-crew.active {
     background: #fff;
+}
+
+.person-info p:first-child{
+    font-size: 32px;
+    font-family: 'Bellefair', serif;
+    text-transform: uppercase;
+    color: #8e8e8e;
+    padding-top: 15svh;
+    margin-bottom: 15px;
+}
+
+.person-info p:nth-child(2){
+    font-size: 56px;
+    font-family: 'Bellefair', serif;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.person-info p:nth-child(3){
+    font-size: 18px;
+    width: 444px;
+    font-family: 'Barlow', sans-serif;
+    color: var(--brightpurple);
 }
