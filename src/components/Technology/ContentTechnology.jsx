@@ -19,10 +19,10 @@ const ContentTechnology = () => {
       };
 
     return (
-    <div className="content-crew">
+    <div className="content-technology">
     <div>
     <div  className="title-page">
-        <p className='meet-your-creew'><span>02</span> MEET YOUR CREW</p>
+        <p className='meet-your-creew'><span>03</span> SPACE LAUNCH 101</p>
     </div>
     <div className="tech-info">
 
@@ -30,15 +30,16 @@ const ContentTechnology = () => {
       
       {selectedPlanet && (
         <motion.div
-          className='tech'
+          className='text-tech'
           variants={imageVariants}
           initial="hidden"
           animate="visible"
         >
           {data.technology.map((technology, i) =>
             technology.name === selectedPlanet ? (
-              <div className='tech-info' key={i}>
-                <p>The terminology</p>
+              <div className='tech-description' key={i}>
+                <p>The terminology...</p>
+                <p>{technology.name}</p>
                 <p>{technology.description}</p>
               </div>
             ) : null
@@ -46,17 +47,19 @@ const ContentTechnology = () => {
         </motion.div>
       )}
 
-    <div className='container-circle'>
+    <div className='tech-choose'>
         {data.technology.map((technology, i) => (
           <motion.div
-          className={`dots-choose-crew ${technology.name === selectedPlanet ? 'active' : ''}`}
+          className={`dots-choose-tech ${technology.name === selectedPlanet ? 'active' : ''}`}
           key={i}
             variants={imageVariants}
             initial="hidden"
             animate="visible"
             onClick={() => handlePlanetClick(technology.name)}
           >
-            <span className='dots-choose-crew'></span>
+            <span className=''>
+                {i+1}
+            </span>
           </motion.div>
         ))}
       </div>
@@ -65,7 +68,7 @@ const ContentTechnology = () => {
     </div>
 
 
-    <div className="choose-crew">
+    <div className="choose-tech">
     {selectedPlanet && (
         <motion.div
         key={selectedPlanet}  // Dodaj klucz do zapewnienia unikalności
@@ -80,7 +83,7 @@ const ContentTechnology = () => {
                 (technology) => technology.name === selectedPlanet
               )?.images?.portrait || ''
             }
-            alt="Selected Crew"
+            alt="Selected tech"
           />
         </motion.div>
       )}

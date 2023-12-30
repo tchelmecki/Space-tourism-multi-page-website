@@ -3,21 +3,97 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100svh;
+    font-family: 'Barlow Condensed', sans-serif;
+
+}
+.content-technology{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-left: 10%;
 }
 .tech-info{
-    width: 770px;
-    /* height: 72svh; */
-    /* background-color: red; */
+    width: 50svw;
+    height: 72svh;
     position: relative;
-    background-color: red;
+    display: flex;
+    flex-direction: row-reverse;
 }
 .container-circle{
     background-color: blue;
     /* width: 20%; */
 }
-.tech{
+
+.text-tech{
     width: 80%;
-    background-color: brown;
+    /* background-color: aquamarine; */
+}
+.tech-choose{
+    width: 20%;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.dots-choose-tech{
+    border: 1px solid #979797;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    font-size: 32px;
+    transition: .2s ease-in-out all;
+    cursor: pointer;
+}
+.dots-choose-tech:hover{
+    border: 1px solid #fff;
+}
+.dots-choose-tech.active{
+    background-color: #fff;
+    color: #0B0D17;
+    border: 1px solid #fff;
+}
+.dots-choose-tech:not(:first-child){
+    margin-top: 35px;
+}
+.choose-tech{
+    width: 50svw;
+    height: 85svh;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 100px;
 }
 
+.text-tech{
+    display: flex;
+    align-items: center;
+}
+
+.tech-description p:first-child{
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2.75px;
+    color: var(--brightpurple);
+}
+
+.tech-description p:nth-child(2){
+    font-size: 56px;
+    text-transform: uppercase;
+    font-family: 'Bellefair', serif;
+    margin-top: 11px;
+    margin-bottom: 17px;
+}
+
+.tech-description p:nth-child(3){
+    width: 440px;
+    font-size: 18px;
+    color: var(--brightpurple);
+    font-family: 'Barlow', sans-serif;
+    line-height: 30px;
+}
    

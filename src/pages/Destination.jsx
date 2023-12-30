@@ -15,7 +15,7 @@ const Destination = () => {
   return (
     <motion.div 
       className='destination-content'
-      variants={containerVariants}
+      // variants={containerVariants}
       initial="hidden"
       animate="visible"
     >

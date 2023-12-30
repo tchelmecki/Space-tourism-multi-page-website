@@ -28,7 +28,7 @@ const Nav = () => {
     <>
       <nav>
       <div className="logo">
-          <img src={logo} alt="" />
+          <Link to='/'><img src={logo} alt="" /></Link>
         </div>
         <div className="line-container">
           <div className="line"></div>

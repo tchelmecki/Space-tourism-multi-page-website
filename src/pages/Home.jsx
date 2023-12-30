@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <motion.div
       className='home'
-      variants={containerVariants}
+      // variants={containerVariants}
       initial="hidden"
       animate="visible"
     >

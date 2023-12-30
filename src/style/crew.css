@@ -15,9 +15,7 @@
 .crew-info{
     width: 770px;
     height: 72svh;
-    /* background-color: red; */
     position: relative;
-
 }
 .choose-crew{
     width: 770px;
@@ -125,4 +123,5 @@
     width: 444px;
     font-family: 'Barlow', sans-serif;
     color: var(--brightpurple);
+    line-height: 30px;
 }
