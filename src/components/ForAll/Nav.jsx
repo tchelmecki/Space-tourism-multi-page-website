@@ -5,6 +5,7 @@ import logo from '../../assets/shared/logo.svg';
 
 const Nav = () => {
   const [activeLink, setActiveLink] = useState('/destination');
+  const [openHmenu, setOpenHmenu] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -24,6 +25,12 @@ const Nav = () => {
     }
   }, [location.pathname]);
 
+  const toggleMenu = () =>{
+    console.log('clicked');
+    setOpenHmenu(!openHmenu)
+
+  }
+
   return (
     <>
       <nav>
@@ -33,7 +40,13 @@ const Nav = () => {
         <div className="line-container">
           <div className="line"></div>
         </div>
-        <div className="menu">
+        <div className={`hamburger-menu ${openHmenu ? 'open' : ''}`} onClick={toggleMenu}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        <div className={`menu ${openHmenu ? 'open' : ''}`}>
+          
           <Link
             className={`under ${activeLink === 0 ? 'active' : ''}`}
             to="/"

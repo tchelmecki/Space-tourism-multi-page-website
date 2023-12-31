@@ -14,7 +14,7 @@ html{
     background-image: url(../assets/home/background-home-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    height: 100%;
 }
 
 nav{
@@ -30,7 +30,6 @@ nav{
     font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 3px;
 }
-
 
 .logo{
     width: 10svw;
@@ -218,3 +217,198 @@ a{
     height: 400px;
 }
 
+
+/*=================MEDIA QUERIES===============*/
+
+@media only screen and (width<=450px) {
+    .home{
+        background-image: url(../assets/home/background-home-mobile.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    nav{
+        font-size: 12px;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 45px;
+    }
+    .logo{
+        width: 10px;
+    }
+    .menu{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 100svh;
+        padding-right: 0;
+        padding-left: 0;
+        /* background-color: black; */
+        transition: .3s ease-in-out all;
+        display: flex;
+        flex-direction: column;
+        padding-top: 25%;
+     
+    }
+    .menu .under{
+        width: 100%;
+        height: 31px;
+        display: none;
+    }
+    .menu .under::after{
+        content: "";
+        width: 3px;
+        height: 100%;
+        background-color: #979797;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: none;
+        animation: none;
+    }
+    /* .menu .under{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+        width: 100%;
+        transition: .1s ease-in-out all;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: none;
+    } */
+
+    .menu.open{
+        width: 80%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .menu.open .under {
+        display: flex;
+        /* background-color: red; */
+        justify-content: flex-start;
+        font-size: 16px;
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+    
+    .menu::before{
+        display: none;
+    }
+    .line-container{
+        display: none;
+    }
+    .content{
+        /* background-color: rebeccapurple; */
+        display: flex;
+        flex-direction: column;
+        height: 85svh;
+        padding-top: 0;
+
+    }
+    .hamburger-menu{
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+        z-index: 2;
+        transition: .3s ease-in-out all;
+        margin-right: 25px;
+    }
+    
+    .hamburger-menu div{
+        background-color: var(--brightpurple);
+        height: 3px;
+        transition: .3s ease-in-out all;
+
+    }
+    .hamburger-menu.open div:first-child{
+        transform: rotateZ(45deg) translate(7px, 7px);
+    }
+    .hamburger-menu.open div:nth-child(2){
+        background: transparent;
+    }
+    .hamburger-menu.open div:last-child{
+        transform: rotateZ(-45deg) translate(6px, -6px);
+    }
+
+   
+
+    
+
+    section{
+        width: 100%;
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    section p:first-child{
+        font-size: 14px;
+        font-family: 'Barlow Condensed', sans-serif;
+        letter-spacing: 4.75px;
+        color: var(--brightpurple);
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    section p:nth-child(2){
+        font-size: 75px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    section p:nth-child(3){
+        color: var(--brightpurple);
+        font-family: 'Barlow', sans-serif;
+        line-height: 35px;
+        font-size: 15px;
+        text-align: center;   
+        width: 100%;
+        padding: 0 20px 0 20px;
+    }
+    aside{
+        width: 100%;
+        height: 45%;
+        display: flex;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+    .circle{
+        height: 150px;
+        width: 150px;
+        transition: .3s ease-in-out all;
+    }
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
+    .explore {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        color: var(--brightblack);
+        background-color: var(--white);
+        height: 150px;
+        width: 150px;
+        border-radius: 100%;
+        z-index: 2;
+        cursor: pointer;
+    
+    }
+    
+    
+    .circle:hover{
+        width: 0;
+        height: 0;
+    }
+}
