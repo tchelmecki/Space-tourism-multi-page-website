@@ -5,8 +5,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Barlow Condensed', sans-serif;
-
-    
 }
 .space-object, .choose-object{
     width: 770px;
@@ -22,7 +20,6 @@
     letter-spacing: 4.75px;
     position: absolute;
     top: -120px;
-
 }
 .space-object p span{
   color: #8e8e8e;
@@ -127,4 +124,101 @@
     font-size: 28px;
     font-family: 'Bellefair', serif;
     padding-top: 12px;
+}
+
+
+/*=================MEDIA QUERIES===============*/
+
+@media only screen and (width<=450px) {
+    .destination-content{
+        background-image: url(../assets//destination/background-destination-mobile.jpg);
+        display: flex;
+        flex-direction: column;
+    }
+    .space-object, .choose-object{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+    }
+    .space-object{
+        height: 35svh;
+    }
+    .choose-object{
+        padding-right: 0px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .space-object p{
+        font-size: 16px;
+        letter-spacing: 4.75px;
+        position: absolute;
+        top: 0;
+    }
+    .display-planet{
+        display: flex;
+        justify-content: center;
+    }
+    .planets-name{
+        width: 100%;
+        
+    }
+    .space-object img{
+        margin-left: 0px;
+        width: 40%;
+    }
+    .planets-name{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100svw;
+        /* background-color: red; */
+        margin-bottom: 0px;
+        padding-right: 0px;
+    }
+    .planets-name .planet{
+        margin-right: 0px; 
+    }
+    .planets-chosen{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .planets-chosen p:nth-child(2){
+        width: 327px;
+        text-align: center;
+        font-size: 15px;
+        position: relative;
+        color: var(--brightpurple);
+        font-family: 'Barlow', sans-serif;
+        line-height: 30px;
+        padding-bottom: 20px;
+        margin-top: 0px;
+    }
+    .planets-chosen p:first-child{
+        font-size: 56px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .distance-travel{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .distance-travel span:nth-child(2),span:nth-child(4){
+        font-size: 24px;
+        font-family: 'Bellefair', serif;
+        padding-top: 12px;
+    }
+    .distance-travel span:nth-child(1){
+        color: var(--brightpurple);
+
+    }
+    .distance-travel span:nth-child(3){
+        font-size: 16px;
+        color: var(--brightpurple);
+        font-family: 'Barlow Condensed', sans-serif;
+    }
 }

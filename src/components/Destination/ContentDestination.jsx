@@ -24,11 +24,11 @@ const ContentDestination = () => {
       <p><span>01</span> PICK YOUR DESTINATION</p>
       {selectedPlanet && (
         <motion.div
-        key={selectedPlanet}  // Dodaj klucz do zapewnienia unikalności
-
+          key={selectedPlanet}  // Dodaj klucz do zapewnienia unikalności
           variants={imageVariants}
           initial="hidden"
           animate="visible"
+          className='display-planet'
         >
           <img
             src={
@@ -71,8 +71,9 @@ const ContentDestination = () => {
                 <p>{destination.description}</p>
                 <div className='distance-travel'>
                 <span>avg distance: </span>
-                <span>est. travel time: </span>
                 <span>{destination.distance}</span>
+                <span>est. travel time: </span>
+
                 <span>{destination.travel}</span>
                 </div>
               </div>
