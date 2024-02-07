@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../style/technology.css';
 import '../../style/crew.css';
 import data from '../../assets/data.json';
@@ -17,6 +17,31 @@ const ContentTechnology = () => {
       const handlePlanetClick = (planetName) => {
         setSelectedPlanet(planetName);
       };
+
+      const [backgroundImage, setBackgroundImage] = useState('');
+
+      useEffect(() => {
+        const handleResize = () => {
+          // Sprawdź szerokość ekranu
+          const screenWidth = window.innerWidth;
+          // Wybierz odpowiedni obraz w zależności od szerokości ekranu
+          const imageUrl = screenWidth <= 425 ?
+            data.technology.find((technology) => technology.name === selectedPlanet)?.images?.landscape || '' :
+            data.technology.find((technology) => technology.name === selectedPlanet)?.images?.portrait || '';
+    
+          setBackgroundImage(`url(${imageUrl})`);
+        };
+    
+        // Wywołaj funkcję obsługi zmiany rozmiaru ekranu po załadowaniu komponentu
+        handleResize();
+    
+        // Dodaj nasłuchiwanie zmiany rozmiaru okna
+        window.addEventListener('resize', handleResize);
+    
+        // Zdejmij nasłuchiwanie zmiany rozmiaru okna po odmontowaniu komponentu
+        return () => window.removeEventListener('resize', handleResize);
+      }, [selectedPlanet]); // Nasłuchuj zmiany wybranej planety
+    
 
     return (
     <div className="content-technology">
@@ -69,28 +94,36 @@ const ContentTechnology = () => {
 
 
     <div className="choose-tech">
-    {selectedPlanet && (
-        <motion.div
-        key={selectedPlanet}  // Dodaj klucz do zapewnienia unikalności
+    <p className='meet-your-for-mobile'><span>03</span> MEET YOUR CREW</p>
 
+      {selectedPlanet && (
+        <motion.div
+          key={selectedPlanet}  // Dodaj klucz do zapewnienia unikalności
+          style={{
+            backgroundImage: backgroundImage,
+            backgroundSize: 'contain', // Dopasowuje tło do rozmiaru kontenera
+            backgroundRepeat: 'no-repeat', // Zapobiega powtarzaniu tła
+            backgroundPosition: 'center',
+            /* Pozostałe style */
+            width: '100%', // Ustaw szerokość na 100% lub inaczej, w zależności od potrzeb
+            height: '100%' // Ustaw wysokość na wartość, która Ci odpowiada
+          }}
           variants={imageVariants}
           initial="hidden"
           animate="visible"
         >
-          <img
+          {/* <img
+            className='machine'
             src={
               data.technology.find(
                 (technology) => technology.name === selectedPlanet
               )?.images?.portrait || ''
             }
             alt="Selected tech"
-          />
+          /> */}
         </motion.div>
       )}
     </div>
-
-
-
   </div>
     )
 }

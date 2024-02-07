@@ -20,7 +20,7 @@ const ContentCrew = () => {
 
     return (
     <div className="content-crew">
-    <div>
+    <div className='crew-div'>
     <div  className="title-page">
         <p className='meet-your-creew'><span>02</span> MEET YOUR CREW</p>
     </div>
@@ -67,8 +67,11 @@ const ContentCrew = () => {
 
 
     <div className="choose-crew">
+    <p className='meet-your-for-mobile'><span>02</span> MEET YOUR CREW</p>
+
     {selectedPlanet && (
         <motion.div
+        className='person'
         key={selectedPlanet}  // Dodaj klucz do zapewnienia unikalności
 
           variants={imageVariants}
@@ -83,7 +86,9 @@ const ContentCrew = () => {
             }
             alt="Selected Crew"
           />
+            
         </motion.div>
+        
       )}
     </div>
 

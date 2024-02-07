@@ -96,4 +96,103 @@
     font-family: 'Barlow', sans-serif;
     line-height: 30px;
 }
+
    
+/*=================MEDIA QUERIES===============*/
+
+@media only screen and (width<=450px) {
+    .container-technology{
+        background-image: url(/src/assets/technology/background-technology-mobile.jpg);
+    }
+    .content-technology{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column-reverse;
+        padding-left: 0%;
+    }
+    .tech-info{
+        width: 100%;
+        height: 55svh;
+        position: relative;
+        /* display: none; */
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+    .container-circle{
+        background-color: blue;
+        /* width: 20%; */
+    }
+    
+    .text-tech{
+        width: 100%;
+        text-align: center;
+        /* background-color: aquamarine; */
+    }
+    .tech-choose{
+        width: 100%;
+        /* background-color: brown; */
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .dots-choose-tech{
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        font-size: 16px;
+        margin-left: 15px;
+    }
+    .dots-choose-tech:hover{
+        border: 1px solid #fff;
+    }
+    .dots-choose-tech.active{
+        background-color: #fff;
+        color: #0B0D17;
+        border: 1px solid #fff;
+    }
+    .dots-choose-tech:not(:first-child){
+        margin-top: 0px;
+    }
+    .choose-tech{
+        width: 100%;
+        /* background-color: red; */
+        height: 30svh;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 0px;
+    }
+    .text-tech{
+        display: flex;
+        align-items: center;
+    }
+    
+    .tech-description p:first-child{
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 2.75px;
+        color: var(--brightpurple);
+        margin-top: 20px;
+    }
+    
+    .tech-description p:nth-child(2){
+        font-size: 26px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    
+    .tech-description p:nth-child(3){
+        width: 100%;
+        font-size: 15px;
+        line-height: 30px;
+        padding: 0 20px 0 20px;
+        margin-top: 10px;
+    }
+    .meet-your-for-mobile{
+        width: 100%;
+        text-align: center;
+        margin-top: -20px;
+    }
+}

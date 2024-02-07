@@ -125,3 +125,106 @@
     color: var(--brightpurple);
     line-height: 30px;
 }
+
+.meet-your-for-mobile{
+    display: none;
+}
+
+/*=================MEDIA QUERIES===============*/
+
+@media only screen and (width<=450px) {
+    .container-crew{
+        background-image: url(../assets/crew/background-crew-mobile.jpg);
+    }
+    .content-crew{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .crew-info{
+        width: 100%;
+        height: 40svh;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+    .choose-crew{
+        width: 100%;
+        height: 45svh;
+        position: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        position: relative;
+    }
+    .person{
+        display: flex;
+        justify-content: center;
+        margin: 0 30px 0 30px;
+        border-bottom: 1px solid #383B4B;
+        
+    } 
+    .choose-crew img{
+        position: unset;
+        width: 50%;
+    }
+    .meet-your-creew{
+        display: none;
+        
+    }
+    .meet-your-for-mobile{
+        display: block;
+        /* color: #8e8e8e; */
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 4.75px;
+        /* padding-bottom: 30px; */
+        position: absolute;
+        top: 5px;
+
+    }
+    .meet-your-for-mobile span{
+       color: #8e8e8e;
+    }
+
+    .dots-choose-crew{
+        width: 10px;
+        height: 10px;
+      
+    }
+    .crew-name{
+        width: 100%;
+        margin-bottom: 0px;
+        position: unset;
+        display: flex;
+        justify-content: center;
+
+    }
+    .person-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .person-info p:first-child{
+        font-size: 16px;
+        padding-top: 5svh;
+        margin-bottom: 15px;
+    }
+    
+    .person-info p:nth-child(2){
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .person-info p:nth-child(3){
+        font-size: 15px;
+        text-align: center;
+        width: 75%;
+        line-height: 25px;
+    }
+    
+}
